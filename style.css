@@ -1,0 +1,62 @@
+html {
+    background: linear-gradient(to right, #8360c3, #2ebf91);
+}
+
+body{
+    margin: 20px 100px;
+}
+
+h1, h2{
+    font-family: 'Satisfy', cursive, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: #ffffffff;
+}
+
+.table{
+    position: relative;
+    float: left;
+}
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+
+td{
+    background-color: aliceblue;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.form {
+    float: right;
+    text-align: center;
+}
+
+.form input, button{
+    border-radius: 20px;
+    border: #ffffffff;
+}
+
+.form label{
+    color: #ffffffff;
+}
+
+.form input{
+    padding: 8px;
+    width: 100%;
+}
+
+button{
+    margin: 6px;
+    padding: 10px;
+    width: 40%;
+}
+button:hover{
+    color: #ffffffff;
+    background-color: #086650;
+}
