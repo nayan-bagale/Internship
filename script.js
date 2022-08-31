@@ -16,8 +16,15 @@ function inputData(){
     let studID = document.getElementById("id").value
     let marks = document.getElementById("Marks").value
     if (studID != '' & marks !=''){
-        insert(studID, marks)
-        localStorage.setItem(studID, marks);
+        if(localStorage.getItem(studID) == null){
+            insert(studID, marks)
+            let x = localStorage.setItem(studID, marks);
+        }else{
+            alert("StudentID Already Exist.")
+            defaultValue()
+        }
+    }else{
+        alert('Enter The studID with marks to Insert');
     }
 }
 
@@ -35,13 +42,14 @@ function defaultValue(){
 function update(){
     let studID = document.getElementById("id").value
     let marks = document.getElementById("Marks").value
-    if(studID == '' & marks ==''){
+    if(studID == '' | marks ==''){
         defaultValue()
-        console.log('Enter The studID to update');
-        return 1
+        alert('Enter The studID with marks to update');
+        return false
     }
-    console.log(studID)
+    console.log(studID, marks)
     var trs = document.querySelectorAll("tr");
+    var count = 0
     for (var i = 0; i < trs.length; i++)
         (function (e) {
            let id = trs[e].querySelectorAll("*")[0].innerHTML.trim();
@@ -49,9 +57,11 @@ function update(){
             console.log(id)
             trs[e].querySelectorAll("*")[1].innerHTML = marks;
             localStorage.setItem(studID, marks);
-            defaultValue()
-           }
+            defaultValue()   
+           }else count += 1;
+
     })(i);
+    if(count == trs.length) alert("StudentID Not Exist")
 }
 
 function deletedata(){
@@ -78,16 +88,22 @@ function deletedata(){
 
 function viewallLocal(){
     let len =localStorage.length;
+    var trs = document.querySelectorAll("tr");
+    for (var i = 2; i < trs.length; i++)
+        (function (e) {
+            trs[e].remove();
+
+    })(i)
     for(let i = 0; i<len; i++ ){
         var studID = localStorage.key(i);
         var marks = localStorage.getItem(studID);
         insert(studID, marks)
-        console.log(studID, marks)
     }
 }
 
 function dropdata(){
     localStorage.clear();
+    viewallLocal()
 }
 
 // async function viewall(){
