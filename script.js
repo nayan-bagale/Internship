@@ -1,13 +1,12 @@
-
 function rowselect(){
     var trs = document.querySelectorAll("tr");
     for (var i = 0; i < trs.length; i++)
         (function (e) {
         trs[e].addEventListener("click", function () {
-            console.log({
-            "FirstName": this.querySelectorAll("*")[0].innerHTML.trim(),
-            "LastName": this.querySelectorAll("*")[1].innerHTML.trim(),
-            });
+            let id = this.querySelectorAll("*")[0].innerHTML.trim()
+            let marks = this.querySelectorAll("*")[1].innerHTML.trim()
+            document.getElementById("id").value = id
+            document.getElementById("Marks").value = marks
         }, false);
     })(i);
 }
@@ -37,6 +36,7 @@ function insert(studID, marks){
 function defaultValue(){
     document.getElementById("id").value = ""
     document.getElementById("Marks").value = ""
+    rowselect()
 }
 
 function update(){
