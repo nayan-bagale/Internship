@@ -1,3 +1,5 @@
+viewallLocal()
+
 function rowselect(){
     var trs = document.querySelectorAll("tr");
     for (var i = 0; i < trs.length; i++)
@@ -89,7 +91,7 @@ function deletedata(){
 function viewallLocal(){
     let len =localStorage.length;
     var trs = document.querySelectorAll("tr");
-    for (var i = 2; i < trs.length; i++)
+    for (var i = 1; i < trs.length; i++)
         (function (e) {
             trs[e].remove();
 
@@ -107,7 +109,7 @@ function dropdata(){
 }
 
 // async function viewall(){
-//     const responce = await fetch("https://API.nayanbagale.repl.co")
+//     const responce = await fetch("#")
 //     const json = await responce.json()
 //     console.log(json)
 //     for(let i = 0; i < json.length; i++){
@@ -122,7 +124,7 @@ function dropdata(){
 
 // function postreq(studID, marks){
 //     var xhr = new XMLHttpRequest();
-//     xhr.open("POST", "https://API.nayanbagale.repl.co/post/json", true);
+//     xhr.open("POST", "#", true);
 //     xhr.setRequestHeader('Content-Type', 'application/json');
 //     xhr.send(JSON.stringify({
 //         "studID": studID,
