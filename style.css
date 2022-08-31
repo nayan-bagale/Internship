@@ -12,6 +12,7 @@ h1, h2{
     font-weight: 400;
     text-align: center;
     color: #ffffffff;
+    
 }
 
 .table{
@@ -24,17 +25,22 @@ h1, h2{
 
 
 th {
-    background-color: #04AA6D;
+    background-color: #097950;
     color: white;
 }
 
-td{
+tr{
     background-color: aliceblue;
 }
 
 th, td {
     padding: 10px;
     text-align: center;
+}
+
+tr:hover{
+    color: #ffffffff;
+    background-color: #15b993;
 }
 
 .form {
@@ -69,9 +75,27 @@ button:hover{
     background-color: #086650;
 }
 
+.footer-text{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 @media (max-width: 768px) {
     .table{
         justify-content: center;
         width: 100%;
+    }
+    /* .footer-text{
+        position: relative;
+    } */
+}
+
+@media (max-width: 478px) {
+    .footer-text{
+        position: relative;
+    }
+    button{
+        font-size: 14px;
     }
 }
