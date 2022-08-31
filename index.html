@@ -19,6 +19,10 @@
           <th>Student ID</th>
           <th>Marks</th>
         </tr>
+        <tr>
+          <td>1</td>
+          <td>95</td>
+        </tr>
         </tbody>
       </table>
       <div class="form">
@@ -27,9 +31,10 @@
         <label for="Marks">Marks:</label><br>
         <input type="text" id="Marks" name="Marks" value=""><br><br>
         <button onclick="inputData()">Submit</button>
-        <button onclick="viewall()">viewall</button>
-        <button onclick="#">Update</button>
-        <button onclick="#">Delete</button>
+        <button onclick="viewallLocal()">viewall</button>
+        <button onclick="update()">Update</button>
+        <button onclick="deletedata()">Remove Item</button>
+        <button onclick="dropdata()">Drop Table</button>
 
     </div>
       <script src="./script.js"></script>
