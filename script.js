@@ -2,7 +2,7 @@ viewallLocal()
 
 function rowselect(){
     var trs = document.querySelectorAll("tr");
-    for (var i = 0; i < trs.length; i++)
+    for (var i = 1; i < trs.length; i++)
         (function (e) {
         trs[e].addEventListener("click", function () {
             let id = this.querySelectorAll("*")[0].innerHTML.trim()
