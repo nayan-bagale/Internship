@@ -86,9 +86,9 @@ button:hover{
         justify-content: center;
         width: 100%;
     }
-    /* .footer-text{
-        position: relative;
-    } */
+    hr{
+        display: block !important;
+    }
 }
 
 @media (max-width: 478px) {
